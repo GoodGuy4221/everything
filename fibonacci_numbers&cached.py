@@ -12,19 +12,19 @@ import time
 #     return wrapper
 
 
-def cash(func):
-    def wrapper(number, cash_data=[1, 1]):
-        if len(cash_data) <= number:
+def cached(func):
+    def wrapper(number, cache_data=[1, 1]):
+        if len(cache_data) <= number:
             current_el = func(number)
-            cash_data.append(current_el)
+            cache_data.append(current_el)
         else:
-            current_el = cash_data[number]
+            current_el = cache_data[number]
         return current_el
 
     return wrapper
 
 
-@cash
+@cached
 def get_fibonacci_numbers(number):
     # quadratic complexity
     if number in [1, 2]:
