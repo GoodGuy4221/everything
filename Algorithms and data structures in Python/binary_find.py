@@ -1,25 +1,21 @@
-import random
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 
-SIZE = 10
-MIN_ITEM = 0
-MAX_ITEM = 100
-array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
-print(array)
+search_num = 22
+left_pos = 0
+right_pos = len(a) - 1
+middle_pos = len(a) // 2
+founded = False
 
-array.sort()
-print(array)
+while left_pos <= right_pos:
+    if search_num > a[middle_pos]:
+        left_pos = middle_pos + 1
+    elif search_num < a[middle_pos]:
+        right_pos = middle_pos - 1
+    else:
+        print('Number is here!')
+        founded = True
+        break
+    middle_pos = (left_pos + right_pos) // 2
 
-find_ = int(input('What to look for? '))
-position = len(array) // 2
-left = 0
-right = len(array) - 1
-
-while find_ != array[position] and left <= right:
-    if find_ > array[position]:
-        left = position + 1
-    elif find_ < array[position]:
-        right = position - 1
-    position = (left + right) // 2
-
-
-print('element no' if left > right else f'element {find_} in cell {position}')
+if not founded:
+    print('Number is not here!')
