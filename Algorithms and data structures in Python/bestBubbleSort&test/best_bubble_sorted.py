@@ -28,8 +28,9 @@ def bubble_sort(array):
     return array
 
 
-LENGTH_ARRAY = 100
-test_array = [randint(0, 100) for _ in range(LENGTH_ARRAY)]
-print(f'no sorted\n{test_array}')
-bubble_sort(test_array)
-print(f'sorted\n{test_array}')
+if __name__ == '__main__':
+    LENGTH_ARRAY = 100
+    test_array = [randint(0, 100) for _ in range(LENGTH_ARRAY)]
+    print(f'no sorted\n{test_array}')
+    bubble_sort(test_array)
+    print(f'sorted\n{test_array}')
