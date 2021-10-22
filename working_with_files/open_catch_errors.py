@@ -12,3 +12,13 @@ else:
     for line in file:
         print(line.strip())
     file.close()
+
+
+def main(*args, **kwargs):
+    if args or kwargs:
+        return args or kwargs
+    else:
+        raise ZeroDivisionError('bad data')
+
+
+main(52)
