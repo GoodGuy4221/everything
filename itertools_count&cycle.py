@@ -23,8 +23,13 @@ for i in iter_1:
     print(i)
     if i > 9:
         break
+print(f'next - {next(iter_1)}')
+print(f'next - {next(iter_1)}...')
 
 for i, e in enumerate(iter_2, 1):
     print(e)
     if i > 8:
         break
+print(f'next - {next(iter_2)}')
+print(f'next - {next(iter_2)}')
+print(f'next - {next(iter_2)}...')
