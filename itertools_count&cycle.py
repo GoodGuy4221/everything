@@ -33,3 +33,5 @@ for i, e in enumerate(iter_2, 1):
 print(f'next - {next(iter_2)}')
 print(f'next - {next(iter_2)}')
 print(f'next - {next(iter_2)}...')
+del iter_1
+del iter_2
